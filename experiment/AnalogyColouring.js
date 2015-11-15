@@ -29,7 +29,7 @@ var Coloring = function(container, data, height, instruction, swatchesContainer,
                 + 'height:' + this.height + 'px; ')
 
         // Colors
-		this.swatches = [
+        this.swatches = [
             // '#7fdbff', // Aqua
             '#0074d9', // blue
             // '#01ff70', // lime
@@ -101,61 +101,61 @@ var Coloring = function(container, data, height, instruction, swatchesContainer,
 
         } else {
             
-	        // Build color handles, inserted directly after the container.
-	        this.handles = []
-	        this.colorsContainer = document.createElement('div');
-	        this.colorsContainer.setAttribute('class', 'colorsContainer cf');
+            // Build color handles, inserted directly after the container.
+            this.handles = []
+            this.colorsContainer = document.createElement('div');
+            this.colorsContainer.setAttribute('class', 'colorsContainer cf');
             this.colorsContainer.style.width = this.container.offsetWidth +'px'
-	        
+            
             if(swatchesContainer) {
                 document.getElementById(swatchesContainer).appendChild(this.colorsContainer);
             } else {
                 this.container.parentNode.insertBefore(
-    	        		this.colorsContainer, 
-    	        		this.container.nextSibling) // there is no .insertAfter()
+                        this.colorsContainer, 
+                        this.container.nextSibling) // there is no .insertAfter()
             }
 
-	        var label = document.createElement('p');
-	        label.innerHTML = 'Select a color:';
-	        this.addClass(label, 'colors-label');
-	        this.colorsContainer.appendChild(label);
-			
-	        for (var i = 0; i < this.numSwatches; i++) {
-	            this.buildColorHandle(this.swatches[i])
-	        }
-	        var activeHandle = this.swatches.indexOf(this.activeColor);
-	        this.addClass(this.handles[activeHandle], 'active')
+            var label = document.createElement('p');
+            label.innerHTML = 'Select a color:';
+            this.addClass(label, 'colors-label');
+            this.colorsContainer.appendChild(label);
+            
+            for (var i = 0; i < this.numSwatches; i++) {
+                this.buildColorHandle(this.swatches[i])
+            }
+            var activeHandle = this.swatches.indexOf(this.activeColor);
+            this.addClass(this.handles[activeHandle], 'active')
 
         // element is clicked, if any
         this.container.onclick = function(e) {
             var pos = this.getEventPosition(e);
             for (var i = 0; i < this.objects.length; i++) {
-        		var obj = this.objects[i];
-        		if(obj.isPointInside(pos[0], pos[1])) {
-			        this.paintObject(i);
-			        obj.removeClass('color-preview')
-			    }
-        	}
+                var obj = this.objects[i];
+                if(obj.isPointInside(pos[0], pos[1])) {
+                    this.paintObject(i);
+                    obj.removeClass('color-preview')
+                }
+            }
         }.bind(this)
 
         this.container.onmousemove = function(e) {
             var pos = this.getEventPosition(e);
-        	for (i = 0; i < this.objects.length; i++) {
-        		var obj = this.objects[i];
-        		if(obj.isPointInside(pos[0], pos[1])) {
-			        if(this.activeColor != obj._color) {
-			        	obj.addClass('color-preview')
-			        }
-					obj.attr('fill',this.activeColor)
+            for (i = 0; i < this.objects.length; i++) {
+                var obj = this.objects[i];
+                if(obj.isPointInside(pos[0], pos[1])) {
+                    if(this.activeColor != obj._color) {
+                        obj.addClass('color-preview')
+                    }
+                    obj.attr('fill',this.activeColor)
 
-			    } else {
-			    	obj.removeClass('color-preview')
-			    	obj.attr('fill', obj._color)
-			    }
-        	}
+                } else {
+                    obj.removeClass('color-preview')
+                    obj.attr('fill', obj._color)
+                }
+            }
         }.bind(this)
 
-	    }
+        }
     }
 
 }
@@ -245,7 +245,7 @@ Coloring.prototype.unpaintObjects = function(color) {
  */
 Coloring.prototype.buildColorHandle = function(color) {
    
-	// Build element
+    // Build element
     var handle = document.createElement('a');
     handle.setAttribute('class', 'color-handle');
     handle.setAttribute('style', 'background-color: ' + color)
