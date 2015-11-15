@@ -1,0 +1,4 @@
+data/
+exports/
+experiment/drawings/
+*.pyc

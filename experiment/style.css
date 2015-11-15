@@ -1,0 +1,279 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700,400italic,700italic);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+	/*background: rgb(255, 246, 238);*/
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 16px;
+	line-height: 21px;
+	padding-top: 20px;
+	padding-left: 20px;
+	color: rgb(136, 102, 114);
+
+}
+
+#wrapper {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+#experiment-wrapper {
+    position: relative;
+    margin:0 auto;
+    float: left;
+    width: 60%;
+}
+
+#sidebar {
+    float: left;;
+   	width: 35%;
+   	padding-right: 50px;
+}
+#sidebar.wide {
+	width: 60%;
+}
+
+#footer {
+	margin-top: 150px;
+	padding-top:20px;
+	padding-bottom: 10px;
+	font-size: 12px;	
+	text-align: left;
+	line-height: 1.1em;
+	opacity: .3;
+}
+#footer:hover{
+	opacity: 1
+}
+
+
+
+h1 {
+	text-transform: uppercase;
+	color: rgb(136, 102, 114);
+	letter-spacing: 2px;
+	height: 50px;
+}
+
+h1 strong {
+	font-weight: bold;
+}
+
+.message {
+	margin: 10px;
+	padding: 15px 25px;
+	color: rgb(136, 102, 114);
+	background: #fff;
+	border-radius: 2px;
+}
+
+p {
+	margin-bottom: 10px;
+}
+p.rule {
+	font-weight: bold;
+	color: #16B772;
+}
+h3 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #16B772;
+}
+
+
+.btn {
+	outline: none;
+	border: none;
+	padding: 10px 25px;
+	background: #fff;
+}
+
+input[type=submit],
+button {
+	margin-top: 10px;
+	font-size: 15px;
+	font-family: 'Alegreya Sans';
+	border-radius: 2px;
+	background: #16B772;
+	color: #fff;
+	font-weight: bold;
+	opacity: .5;
+	-webkit-transition: opacity 200ms ease-in-out;
+	transition: opacity 200ms ease-in-out;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+input[type=submit]:hover,
+button:hover {
+	opacity: 1;
+}
+
+em {
+	font-style: italic;
+}
+
+
+.pictureContainer {
+    margin: 10px 0;
+    background: #ffffff;
+    position: relative;
+    /*box-shadow: 0 0 5px rgba(0,0,0,0.3);*/
+    box-shadow: 0 0 1px rgba(0,0,0,.8);
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.colorsContainer {
+	margin: 10px 0;
+}
+
+.colors-label {
+   display: none;
+}
+
+.color-handle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+    float: left;
+    margin: 0 5px;
+    border: 2px solid transparent;
+    opacity: .85;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    transition: all 300ms ease-out;
+}
+
+.color-handle.active, .color-handle:hover {
+    border: 2px solid rgba(0,0,0,0.4);
+    box-shadow: 0 0px 6px rgba(0,0,0,0.4);
+    opacity: 1!important;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+}
+
+.color-handle.used {
+    opacity: .2;
+}
+
+.analogy-object {
+    transition: all 350ms ease-out;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.color-preview {
+    opacity: .4;
+}
+
+
+.outputField {
+    width: 100%;
+    min-height: 100px;
+}
+
+
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+.header-row td {
+	background: #fff!important;
+	font-size: 13px;
+	text-align: center;
+	line-height: 1em;	
+	padding: 20px 3px 5px 3px;
+}
+
+.radio-cell {
+	text-align: center;
+}
+
+td {
+	border-bottom: 1px solid #fff;
+	padding: 10px 0;
+}
+
+.question-column {
+	
+}
+
+textarea {
+	width: 100%;
+	margin-bottom: 10px;
+}
